@@ -15,8 +15,9 @@ RUN apk --update --no-cache add py-numpy chromium x11vnc novnc xvfb openbox supe
 # Fix novnc index.html
 RUN ln -s /usr/share/novnc/vnc_auto.html /usr/share/novnc/index.html
 
-# Hide status bar
-RUN sed -i 's/style="margin-top: 0px;"/style="margin-top: 0px; display:none;"/g' /usr/share/novnc/vnc_auto.html
+# Copy patched files
+COPY novnc/vnc_auto.html  /usr/share/novnc/
+COPY novnc/include/rfb.js /usr/share/novnc/include
 
 # Setup basic environment
 ENV TERM=xterm \

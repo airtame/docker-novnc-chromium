@@ -480,12 +480,14 @@ var RFB;
                     break;
 
                 case 'connect':
+                    connected = true;
                     this._init_vars();
                     this._connect();
                     // WebSocket.onopen transitions to 'ProtocolVersion'
                     break;
 
                 case 'disconnect':
+                    connected = false;
                     this._disconnTimer = setTimeout(function () {
                         this._fail("Disconnect timeout");
                     }.bind(this), this._disconnectTimeout * 1000);
@@ -496,6 +498,7 @@ var RFB;
                     break;
 
                 case 'failed':
+                    connected = false;
                     if (oldstate === 'disconnected') {
                         Util.Error("Invalid transition from 'disconnected' to 'failed'");
                     } else if (oldstate === 'normal') {

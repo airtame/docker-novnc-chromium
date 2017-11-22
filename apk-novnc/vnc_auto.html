@@ -47,7 +47,7 @@
 
 <body style="margin: 0px;">
     <div id="noVNC_container">
-            <div id="noVNC_status_bar" class="noVNC_status_bar" style="margin-top: 0px;">
+            <div id="noVNC_status_bar" class="noVNC_status_bar" style="margin-top: 0px; display: none;">
                 <table border=0 width="100%"><tr>
                     <td><div id="noVNC_status" style="position: relative; height: auto;">
                         Loading
@@ -84,6 +84,8 @@
         var rfb;
         var resizeTimeout;
 
+        var connected;
+        var reconnectPollMSecs = 5000;
 
         function UIresize() {
             if (WebUtil.getConfigVar('resize', false)) {
@@ -176,7 +178,7 @@
             }
         }
 
-        window.onscriptsload = function () {
+        function reconnect() {
             var host, port, password, path, token;
 
             $D('sendCtrlAltDelButton').style.display = "inline";
@@ -241,6 +243,14 @@
 
             rfb.connect(host, port, password, path);
         };
+        window.onscriptsload = reconnect;
+        </script>
+        <script>
+        setInterval(function() {
+            if(!connected) {
+                reconnect()
+            }
+        }, reconnectPollMSecs)
         </script>
 
     </body>
