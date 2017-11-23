@@ -84,7 +84,7 @@
         var rfb;
         var resizeTimeout;
 
-        var connected;
+        var connected = null;
         var reconnectPollMSecs = 5000;
 
         function UIresize() {
@@ -247,7 +247,11 @@
         </script>
         <script>
         setInterval(function() {
-            if(!connected) {
+            if (connected == null || connected === true) {
+                return;
+            }
+
+            if(connected === false) {
                 reconnect()
             }
         }, reconnectPollMSecs)
