@@ -32,6 +32,8 @@ RUN addgroup headless && adduser -G headless -s /bin/sh -D headless
 
 # Add supervisord
 COPY supervisord.conf /etc/supervisord.conf
+COPY tab_rotate_config.py /home/headless
+
 USER headless
 
 # Entrypoint

@@ -1,0 +1,24 @@
+{
+   "background": {
+      "scripts": [ "lib/jquery.min.js", "app/background.js", "app/import-analytics.js" ]
+   },
+   "browser_action": {
+      "default_icon": "app/img/Play-38.png",
+      "default_title": "Start Tab Rotate"
+   },
+   "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+   "description": "Loop through a set of tabs - ideal for a Dashboard or Advertisement Display",
+   "icons": {
+      "128": "app/img/Play-128.png",
+      "16": "app/img/Play-16.png",
+      "32": "app/img/Play-32.png",
+      "48": "app/img/Play-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp4kAY+yLp6ThlxticUEvYibdbodQ1QwNbGUSJU+/IDwrpykt0UwUyGz6Fwa+5wkfpCTV+/3C6ajuCsxH7CwY41+XrsiiiaKk7g7LO6QgKs1FTREPUJOpwldx+9aMenlqDANKOTOg53sOIGYOUTR5RwNBuBhVpiWE5oUIrtCppHz3F0SZ8kSmkYBHtfglOvoGa/jmJ8gzymdRX683H+d4LWN1+PBpNrc1KjxbiWT8q3l7UBdFfmpKS53Yfx6tHqLRZGoMJSUltS+3tTLYRAypdKQOeMd6XdOXyXxABnwZoddI2brXCBfq7myfG8eMw877GDn3JSKqwTdK1skEL7TRgwIDAQAB",
+   "manifest_version": 2,
+   "name": "Tab Rotate",
+   "options_page": "app/settings.html",
+   "permissions": [ "activeTab", "storage", "https://ajax.googleapis.com/", "http://*/", "https://*/", "tabs" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.1.2"
+}
