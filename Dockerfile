@@ -9,7 +9,7 @@ EXPOSE $VNC_PORT $NO_VNC_PORT
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 
 # Install basic packages
-RUN apk --update --no-cache add py-numpy chromium x11vnc novnc xvfb openbox supervisor sudo xfce4-terminal wget ca-certificates && \
+RUN apk --update --no-cache add py-numpy chromium x11vnc novnc xvfb openbox supervisor tzdata xfce4-terminal wget ca-certificates && \
     update-ca-certificates
 
 # Fix novnc index.html
