@@ -16,9 +16,9 @@ RUN apk --update --no-cache add py-numpy chromium x11vnc novnc xvfb openbox supe
 ENV TERM=xterm \
     ENABLE_TAB_ROTATE=1 \
     ROTATE_DELAY_SECS=86400 \
-    VNC_COL_DEPTH=24 \
-    VNC_RESOLUTION=1920x1080 \
-    VNC_PW=Test1234 \
+    COLOR_DEPTH=24 \
+    RESOLUTION=1920x1080 \
+    PASSWORD=Test1234 \
     VNC_VIEW_ONLY=false \
     URL="https://airtame.com"
 

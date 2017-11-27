@@ -21,9 +21,9 @@ COPY novnc/include/rfb.js /usr/share/novnc/include
 
 # Setup basic environment
 ENV TERM=xterm \
-    VNC_COL_DEPTH=24 \
-    VNC_RESOLUTION=1920x1080 \
-    VNC_PW=Test1234 \
+    COLOR_DEPTH=24 \
+    RESOLUTION=1920x1080 \
+    PASSWORD=Test1234 \
     VNC_VIEW_ONLY=false \
     URL="https://airtame.com"
 
