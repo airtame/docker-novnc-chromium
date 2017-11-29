@@ -1,3 +1,4 @@
+# -*- Dockerfile -*-
 FROM alpine:edge
 MAINTAINER Airtame "ops@airtame.com"
 
@@ -25,6 +26,7 @@ ENV TERM=xterm \
     RESOLUTION=1920x1080 \
     PASSWORD=Test1234 \
     VNC_VIEW_ONLY=false \
+    ROTATE_SCREEN_DEG=0 \
     URL="https://airtame.com"
 
 # Add new user
