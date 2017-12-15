@@ -36,6 +36,10 @@ RUN addgroup headless && adduser -G headless -s /bin/sh -D headless
 COPY supervisord.conf /etc/supervisord.conf
 COPY tab_rotate_config.py /home/headless
 
+RUN apk add nodejs nodejs-npm
+RUN npm install -g chromix-too
+
+COPY chromix-connector /home/headless/
 USER headless
 
 # Entrypoint
