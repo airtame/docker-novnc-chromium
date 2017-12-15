@@ -3,8 +3,10 @@ FROM alpine:edge
 MAINTAINER Airtame "ops@airtame.com"
 
 ENV VNC_PORT=5901 \
-    NO_VNC_PORT=6080
-EXPOSE $VNC_PORT $NO_VNC_PORT
+    NO_VNC_PORT=6080 \
+    CHROMIX_CONNECTOR_PORT=9000
+
+EXPOSE $VNC_PORT $NO_VNC_PORT $CHROMIX_CONNECTOR_PORT
 
 # Setup testing repo
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories

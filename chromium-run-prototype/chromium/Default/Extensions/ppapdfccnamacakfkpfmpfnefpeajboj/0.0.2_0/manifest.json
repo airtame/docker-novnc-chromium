@@ -1,0 +1,12 @@
+{
+   "background": {
+      "scripts": [ "utils.js", "background.js" ]
+   },
+   "description": "Command-line or scripted access to chrome's extension API.",
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhFGTmqRcEASD7ePCsRxvv7rGd0m/zCWfcZu6mF69Uybyu3Z++BdABNTYngv/hULT2e2trGGT5mj6uTa49gKth/7tTH+GJp/WdWipM3Eb0BLDk0g8QDSjSKBykCieAW7sjJQhigKAvM3XgArhRjf8/rrNA3CHQynPUceSzRmZ1deKU8rWaTqR9qyzE4qb7SXMxFmh7vdzJ03zR7Nw8GfcvsSJjU6S7G0WNBbM9eEsm6w9KVmt178Um2EVupZoTW0Xt5pvaBr0O3x/QF2/Nk4Jsj6pH6/gwNEmxjwEEn3nhu0CtGrf16ZDnTzcFMpapkYQ11KsevpBOiuVz9EvM/T0oQIDAQAB",
+   "manifest_version": 2,
+   "name": "Chromix-Too",
+   "permissions": [ "tabs", "bookmarks", "history", "clipboardRead", "storage", "sessions", "notifications", "webNavigation", "\u003Call_urls>" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.0.2"
+}
